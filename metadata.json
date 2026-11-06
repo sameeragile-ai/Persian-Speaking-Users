@@ -1,0 +1,6 @@
+{
+  "name": "Tizbin (تیزبین) - Persian Daily Game",
+  "description": "A rapid, delightful daily gaming app for Persian speakers. 15 visual challenges in 90 seconds, live daily and monthly leaderboards, shareable scorecards, and friendly competition.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

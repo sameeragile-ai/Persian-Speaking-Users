@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Lalezar', cursive, system-ui;
+  --font-sans: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+  
+  --color-turquoise-deep: #0E6E73;
+  --color-turquoise-tile: #3FA7A3;
+  --color-turquoise-light: #E6F4F3;
+  --color-saffron: #F2A007;
+  --color-saffron-light: #FEF6E6;
+  --color-ivory: #FBF7EF;
+  --color-pomegranate: #C8323C;
+}
+
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Persian 8-point geometric star tile pattern */
+.bg-persian-tile {
+  background-image: radial-gradient(circle at 50% 50%, rgba(14, 110, 115, 0.08) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 0% 0%, rgba(14, 110, 115, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 100% 100%, rgba(14, 110, 115, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px, 12px 12px, 12px 12px;
+}
+
+.dark .bg-persian-tile {
+  background-image: radial-gradient(circle at 50% 50%, rgba(63, 167, 163, 0.12) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 0% 0%, rgba(63, 167, 163, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 100% 100%, rgba(63, 167, 163, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px, 12px 12px, 12px 12px;
+}
+
+/* Hide scrollbars for clean mobile feel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom delicate animation classes */
+@keyframes soft-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.92; }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 2s ease-in-out infinite;
+}
+
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float {
+  animation: float-subtle 3s ease-in-out infinite;
+}
+
